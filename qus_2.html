@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <!-- /calculator -->
+    <script>
+        let string = prompt("Which operation do you want-> +,-,*,/")
+        let num1 = prompt("Enter 1 number->")
+        let num2 = prompt("Enter 2 number->")
+        if(string == '+'){
+            alert(`${parseInt(num1) + parseInt(num2)}`)
+            
+        }
+        else if(string == '-'){
+            alert(`${parseInt(num1) - parseInt(num2)}`)
+        }
+        else if(string == '*'){
+            alert(`${parseInt(num1) * parseInt(num2)}`)
+        }
+        else if(string == '/'){
+            alert(`${parseInt(num1) / parseInt(num2)}`)
+        }
+        else{
+            alert(`Invalid operator`)
+        }
+    </script>
+</body>
+</html>

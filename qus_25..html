@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Move Image with Arrow Keys</title>
+	<style>
+		img {
+            width: 100px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<img id="image" src="./image.jpg" alt="Move Me">
+
+
+	<script>
+        // get the image element
+const image = document.getElementById("image");
+
+// set the initial position of the image
+let x = 50;
+let y = 50;
+image.style.left = x + "%";
+image.style.top = y + "%";
+
+// define the function to move the image
+function moveImage(direction) {
+	switch(direction) {
+		case "ArrowUp":
+			y -= 10;
+			break;
+		case "ArrowDown":
+			y += 10;
+			break;
+		case "ArrowLeft":
+			x -= 10;
+			break;
+		case "ArrowRight":
+			x += 10;
+			break;
+	}
+	image.style.left = x + "%";
+	image.style.top = y + "%";
+}
+
+// add an event listener for keydown events
+document.addEventListener("keydown", event => {
+	moveImage(event.key);
+});
+
+    </script>
+</body>
+</html>

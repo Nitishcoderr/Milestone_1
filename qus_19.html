@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter your Email" id="email">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter your password" id="password">
+
+        <button onclick="valid()">SignIn</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+            let email = document.getElementById("email")
+            let password = document.getElementById("password")
+            let message = document.getElementById("message")
+
+        function valid(){
+            
+            if(email.value.indexOf("@") === -1 || password.value.length < 8){
+                message.innerText = "Invalid Email or Password"
+                message.style.color = "red"
+            }
+            else{
+                message.innerText = "Valid Email and Password"
+                message.style.color = "green"
+            }
+        }
+    </script>
+</body>
+</html>

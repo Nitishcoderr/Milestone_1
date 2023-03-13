@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Highlight Long Words</title>
+    <style>
+      /* Add some styles to make the highlighted words look nice */
+    </style>
+  </head>
+  <body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur turpis eu risus varius sagittis. Sed ultrices, odio at mattis venenatis, velit velit eleifend nisl, sit amet vestibulum leo justo a nulla. Mauris id nibh euismod, iaculis quam eget, feugiat velit. Vestibulum consectetur, sapien eu gravida ullamcorper, velit velit auctor orci, sed tempor nisi magna eu nulla. Nullam finibus libero ac ante lobortis, sed tincidunt nisi consequat. Ut id nibh at mi rutrum aliquam vitae sit amet lectus. Nam pretium feugiat nisi. Nam blandit, augue vel eleifend malesuada, elit elit fringilla elit, ac consequat odio turpis id arcu.</p>
+
+    <script>
+      const paragraph = document.querySelector('p');
+      const paragraphText = paragraph.textContent;
+      const words = paragraphText.split(' ');
+      const longWords = [];
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i].length > 8) {
+          longWords.push(words[i]);
+        }
+      }
+
+      for (let i = 0; i < longWords.length; i++){
+        const regex = new RegExp(longWords[i], 'g');
+
+          paragraph.innerHTML = paragraph.innerHTML.replace(regex, `<span style = "background-color : yellow">${longWords[i]}</span>`);
+      }
+    </script>
+  </body>
+</html>
